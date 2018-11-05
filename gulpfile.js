@@ -11,6 +11,7 @@
 	var autoprefixer = require('gulp-autoprefixer');
 	var concat = require('gulp-concat');
 	var uglify = require('gulp-uglify');
+	var file = require('gulp-file');
 
 	function errorHandler(error) {
 		util.beep();
@@ -92,10 +93,12 @@
 	var ciNewModule = function() {
 		if ( argv.name.length > 0 ) {
 			var modulesPath = './application/modules/';
+			var controllerFile = argv.name.charAt(0).toUpperCase() + argv.name.slice(1) + '.php';
 			return gulp.src(modulesPath)
 			.pipe(gulp.dest(modulesPath + argv.name))
 			.pipe(gulp.dest(modulesPath + argv.name + '/models/'))
 			.pipe(gulp.dest(modulesPath + argv.name + '/views/'))
+			.pipe(file(controllerFile, ''))
 			.pipe(gulp.dest(modulesPath + argv.name + '/controllers/'));
 		} else {
 			return;

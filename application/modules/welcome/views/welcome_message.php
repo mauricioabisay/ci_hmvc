@@ -68,21 +68,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 
 <div id="container">
-	<h1>Bienvenido a CodeIgniter!</h1>
+	<h1>BIENVENIDO a CodeIgniter!</h1>
 
 	<div id="body">
 		<p>Esta pagina y su contenido son creados dinamicamente por CodeIgniter.</p>
-
-		<p>Si deseas editar el contenido de esta pagina, la puedes encontrar en:</p>
-		<code>application/modules/welcome/views/welcome_message.php</code>
-
-		<p>El controlador correspondiente a esta pagina esta ubicado en:</p>
-		<code>application/controllers/Welcome.php</code>
-
-		<p>Si estas usando CodeIgniter por primera vez, te recomiendo empezar leyendo la guia de usuario <a href="user_guide/">User Guide</a>.</p>
 	</div>
 
 	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
+	<p><a href="<?php echo site_url('welcome/help');?>">Ayuda</a></p>
+	<p><a href="<?php echo site_url('login');?>">Login</a></p>
 </div>
 
 </body>

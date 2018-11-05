@@ -16,7 +16,7 @@
 	// 	"description": "Log output to console"
 	// }
 	"Model": {
-		"prefix": "model",
+		"prefix": "CI Model",
 		"body": [
 			"<?php",
 			"defined('BASEPATH') OR exit('No direct script access allowed');",
@@ -45,7 +45,7 @@
 		"description": "Model Blueprint"
 	},
 	"Controller": {
-		"prefix": "controller",
+		"prefix": "CI Controller",
 		"body": [
 			"<?php",
 			"defined('BASEPATH') OR exit('No direct script access allowed');",
@@ -59,13 +59,44 @@
 		"description": "Controller Blueprint"
 	},
 	"Load_View": {
-		"prefix": "load-view",
-		"body": "$$this->load->view('$0');$1",
+		"prefix": "loadview",
+		"body": "$$this->load->view('${1:view}');$0",
 		"description": "Load view"
 	},
 	"Load_Model": {
-		"prefix": "load-model",
-		"body": "$$this->load->model('$0');$1",
+		"prefix": "loadmodel",
+		"body": "$$this->load->model('${1:model}');$0",
 		"description": "Load model"
+	},
+	"foreach": {
+		"prefix": "viewforeach",
+		"body": [
+			"<?php foreach ( ${1:list} as ${2:element} ) : ?>",
+			"\t${3:block}",
+			"<?php endforeach ?>$0"
+		]
+	},
+	"if": {
+		"prefix": "viewif",
+		"body": [
+			"<?php if ( ${1:condition} ) : ?>",
+			"\t${2:block}",
+			"<?php endif ?>$0"
+		]
+	},
+	"ifelse": {
+		"prefix": "viewifelse",
+		"body": [
+			"<?php if ( ${1:condition} ) : ?>",
+			"\t${2:block}",
+			"<?php else : ?>",
+			"\t${3:block}",
+			"<?php endif ?>$0"
+		]
+	},
+	"link": {
+		"prefix": "viewlink",
+		"body": "<a href=\"<?php echo site_url('${1:controller}');?>\">${2:text}</a>$0",
+		"description": "Link"
 	}
 }
