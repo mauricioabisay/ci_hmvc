@@ -1,0 +1,48 @@
+#Ignore everything, since most of it can be download from CI official site
+*
+#Start adding the files that actually made up the project
+!application/
+
+#HMVC Implementation
+!application/core/
+!application/core/*
+!application/third_party/
+!application/third_party/*
+!application/third_party/**/*
+
+#CI standard MVC
+!application/controllers/
+!application/controllers/*
+
+!application/models/
+!application/models/*
+
+!application/views/
+!application/views/*
+!application/views/**/*
+
+#Bring the config along, just in case
+!application/config/
+!application/config/*
+
+#CI HMVC
+!application/modules/
+!application/modules/*
+!application/modules/**/*
+
+#Frontend resource mostly
+!resources/
+!resources/**/*
+
+#VS Code snippet
+!.vscode/
+!.vscode/*
+#Docker
+!docker-compose.yml
+!Dockerfile
+#Nodejs and Gulp
+!gulpfile.js
+!package.json
+#Git
+!.gitignore
+!README.md
